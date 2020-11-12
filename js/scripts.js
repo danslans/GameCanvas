@@ -5,7 +5,7 @@ var temData={
 };
 var listCircles= [];
 var circlesSelects=[];
-var diametro = 15;
+var diametro = 4;
 var countSelectCircle = 0;
 var linesBetweenCircles = [];
 function init(event){
@@ -15,7 +15,7 @@ function init(event){
 	var canvas = document.createElement("canvas");
 	//canvas.style.height="100%";
 	//canvas.style.width="100%";
-	canvas.height="500";//window.innerHeight;
+	canvas.height=window.innerHeight;
 	canvas.width=window.innerWidth;
 	canvas.addEventListener("touchstart",drawStart,false);
 	canvas.addEventListener("touchend",drawEnd,false);
@@ -25,8 +25,8 @@ function init(event){
 	ctx = canvas.getContext("2d");
 	var positionCircleY=20;
 	var positionCircleX=20;
-	var nivel=5;
-	var distance =95;
+	var nivel=50;
+	var distance =20;
 	
 	for(var f=1;f<=nivel;f++){
 		var y = (positionCircleY);
@@ -151,6 +151,7 @@ function drawLine(){
 			}
 		}
 		ctx.lineWidth = 4;
+	ctx.strokeStyle = "#FF0000";
 		ctx.stroke();
 		/*if(circlesSelects[0].x == circlesSelects[1].x || circlesSelects[0].y == circlesSelects[1].y){
 			ctx.moveTo(circlesSelects[0].x,circlesSelects[0].y);
